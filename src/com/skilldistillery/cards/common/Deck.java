@@ -23,21 +23,21 @@ public class Deck {
 		return deck;
 
 	}
-	
+
 	public int checkDeckSize() {
 		int size = cards.size();
-		
+
 		return size;
-		
+
 	}
-	
+
 	public Card dealCard() {
 		return cards.remove(0);
-		
+
 	}
-	
+
 	public void shuffle() {
 		Collections.shuffle(cards);
 	}
-	
+
 }
