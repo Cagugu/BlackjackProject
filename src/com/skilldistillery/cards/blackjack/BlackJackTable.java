@@ -8,10 +8,10 @@ import com.skilldistillery.cards.common.Card;
 
 public class BlackJackTable {
 
-	Scanner kb = new Scanner(System.in);
-	Player player = new Player();
+	private Scanner kb = new Scanner(System.in);
+	private Player player = new Player();
 
-	Dealer gameDealer = new Dealer();
+	private Dealer gameDealer = new Dealer();
 
 	public void blackJackGame() {
 		gameDealer.getDealerDeck().shuffle();
