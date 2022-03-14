@@ -21,6 +21,7 @@ public class BlackJackTable {
 		 
 		
 		System.out.println("Welcome to BlackJack");
+		System.out.println(" ");
 
 			
 			List<Card> playerHand = new ArrayList<>();
@@ -59,10 +60,10 @@ public class BlackJackTable {
 		System.out.println("Enter 1 for hit, OR 2 for stay.");
 		
 		
-		int userInput = kb.nextInt();
 		
 		boolean playerActive = true;
 		while (playerActive) {
+			int userInput = kb.nextInt();
 			
 			if (userInput == 1) {
 				playerHand.add(gameDealer.dealCard());
@@ -83,13 +84,13 @@ public class BlackJackTable {
 			
 		}
 		if (player.getPlayerHand().getHandValue() == 21) {
-			System.out.println("PLAYER WINS!");
+			System.out.println("BLACKJACK!");
 		}
 		else if (player.getPlayerHand().isBust(player.getPlayerHand().getHandValue())) {
 			
-			System.out.println("Sorry! You busted. Dealer wins!");	
+			System.out.println("Sorry! You busted.");	
 		}
-		else {
+//		else {
 			while (gameDealer.getDealerHand().getHandValue() < 17) {
 				if(gameDealer.getDealerHand().getHandValue() <= 21) {
 					dealerHand.add(gameDealer.dealCard());
@@ -104,14 +105,19 @@ public class BlackJackTable {
 				}
 			}
 			if (gameDealer.getDealerHand().getHandValue() > 21 && player.getPlayerHand().getHandValue() > 21) {
+				System.out.println("Dealer hand: " + gameDealer.getDealerHand().getHandValue());
+				System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
 				System.out.println("Dealer bust, player bust. Womp Womp.");
 			}
 			else if (gameDealer.getDealerHand().getHandValue() > player.getPlayerHand().getHandValue()) {
 					if (gameDealer.getDealerHand().getHandValue() > 21) {
+						System.out.println("Dealer hand: " + gameDealer.getDealerHand().getHandValue());
+						System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
 						System.out.println("Player wins, dealer bust!!");
-					}
+					}else {
 					System.out.println("Dealer wins! " + gameDealer.getDealerHand().getHandValue());
 					System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
+					}
 					
 				}
 			else if (player.getPlayerHand().getHandValue() > gameDealer.getDealerHand().getHandValue()) {
@@ -123,7 +129,7 @@ public class BlackJackTable {
 				System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
 				System.out.println("Dealer hand: " + gameDealer.getDealerHand().getHandValue());
 				
-			}
+//			}
 			}
 			
 		
