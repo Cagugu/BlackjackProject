@@ -115,6 +115,9 @@ public class BlackJackTable {
 						System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
 						System.out.println("Player wins, dealer bust!!");
 					}else {
+						if (gameDealer.getDealerHand().getHandValue() == 21) {
+							System.out.println("BLACKJACK!");
+						}
 					System.out.println("Dealer wins! " + gameDealer.getDealerHand().getHandValue());
 					System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
 					}
