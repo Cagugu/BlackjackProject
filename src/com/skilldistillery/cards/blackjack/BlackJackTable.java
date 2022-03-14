@@ -105,8 +105,18 @@ public class BlackJackTable {
 				}
 
 			} else if (player.getPlayerHand().getHandValue() > gameDealer.getDealerHand().getHandValue()) {
+				if (player.getPlayerHand().getHandValue() <= 21) {
 				System.out.println("Player wins! " + player.getPlayerHand().getHandValue());
+				System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
 				System.out.println("Dealer hand: " + gameDealer.getDealerHand().getHandValue());
+				}
+				else if (player.getPlayerHand().getHandValue() > 21) {
+				System.out.println("Player bust: " + player.getPlayerHand().getHandValue());
+				System.out.println("Dealer hand: " + gameDealer.getDealerHand().getHandValue());
+					if (gameDealer.getDealerHand().getHandValue() <= 21) {
+						System.out.println("Dealer wins!");
+					}
+				}
 			} else if (player.getPlayerHand().getHandValue() == gameDealer.getDealerHand().getHandValue()) {
 				System.out.println("Blackjack Push");
 				System.out.println("Player hand: " + player.getPlayerHand().getHandValue());
