@@ -6,13 +6,13 @@ import java.util.List;
 public abstract class Hand {
 
 	private List<Card> cardsInHand;
-	private int numCards;
+//	private int numCards;
 	
 	public Hand() {
 	}
 	
 	public Hand(List<Card> cardsInHand) {
-		this.cardsInHand = newHand(numCards);
+		this.cardsInHand = cardsInHand;
 	}
 	
 	public List<Card> newHand(int numCards) {
@@ -35,33 +35,15 @@ public abstract class Hand {
 	}
 	
 	public int getHandValue() {
-		int handValue = 0;
-		for (Card card : cardsInHand) {
-			handValue += card.getValue();
-		}
-		return handValue;
+		return 0;	
 		
-	}
-
-	public List<String> cardSuitRank() {
-		String handPrint;
-		List<String> wholeHand = new ArrayList<>();
-		for(Card card : cardsInHand) {
-			handPrint = card.toString();
-			wholeHand.add(handPrint);
-		}
-		System.out.println(wholeHand);
-		return wholeHand;
-		
-	}
-
-	public List<Card> getCardsInHand() {
-		return cardsInHand;
-	}
-
-	public void setCardsInHand(List<Card> cardsInHand) {
-		this.cardsInHand = cardsInHand;
 	}
 	
+//	public Card showTopCard() {
+//		Card a = cardsInHand.get(0);
+//		return a;
+//	}
+
+
 	
 }

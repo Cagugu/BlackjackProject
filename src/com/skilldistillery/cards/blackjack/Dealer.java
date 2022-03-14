@@ -36,23 +36,9 @@ public Card dealCard() {
 	
 }
 
-public List<Card> dealBJH() {
-	BlackJackHand bjh = new BlackJackHand();
-	List<Card> dealtHand = bjh.newHand(2);
-	
-	return dealtHand;	
-}
 
-public BlackJackHand dealerMove() {
-	int handValue = dealerHand.getHandValue();
-	if(handValue < 17) {
-		dealerHand.addCard(dealCard());
-	}
-	else {
-		System.out.println("Dealer will stay.");
-	}
+public Dealer() {
 	
-	return dealerHand;
 }
 
 public void setDealerHand(BlackJackHand dealerHand) {

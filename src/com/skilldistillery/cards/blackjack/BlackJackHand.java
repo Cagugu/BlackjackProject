@@ -1,16 +1,27 @@
 package com.skilldistillery.cards.blackjack;
 
+import java.util.List;
+
+import com.skilldistillery.cards.common.Card;
 import com.skilldistillery.cards.common.Hand;
 
 
 public class BlackJackHand extends Hand{
+	private List<Card> cardsInHand;
 
-
-
+public BlackJackHand(List<Card> cardsInHand) {
+	this.cardsInHand = cardsInHand;
+}
 
 
 public int getHandValue() {
-	int handValue = super.getHandValue();
+	int handValue = 0;
+	for (Card card : cardsInHand) {
+		int cardValue = card.getValue();
+		handValue += cardValue;
+		
+	}
+	
 	return handValue;
 }
 
